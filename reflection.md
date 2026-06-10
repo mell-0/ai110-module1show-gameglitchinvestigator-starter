@@ -20,8 +20,8 @@ Document at least 3 bugs you found. Add rows as needed.
 |> Submited    |> hint is supposed |> Gives me wrong |
 |a guess       |to be correct      |hints            |
 |              |                   |                 |
-|> Difficulty  |> change the answer|> Wrong answer   |
-|level change  |to the given level |for level        |
+|> # of guesses|> # of guesses     |> Wrong # of     |
+|not matching  |matches to the lvl |guess for level  |
 ---
 
 ## 2. How did you use AI as a teammate?
