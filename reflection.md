@@ -12,12 +12,16 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
-
+|     Input    | Expected Behavior | Actual Behavior | Console Output / Error |
+|--------------|-------------------|-----------------|------------------------|
+|> Pressed new |> Reset my tries & |> Does nothing   |
+|game          | make a new round  |                 |
+|              |                   |                 |
+|> Submited    |> hint is supposed |> Gives me wrong |
+|a guess       |to be correct      |hints            |
+|              |                   |                 |
+|> Difficulty  |> change the answer|> Wrong answer   |
+|level change  |to the given level |for level        |
 ---
 
 ## 2. How did you use AI as a teammate?
