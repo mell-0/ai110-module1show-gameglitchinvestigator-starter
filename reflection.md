@@ -14,16 +14,19 @@ Document at least 3 bugs you found. Add rows as needed.
 
 |     Input    | Expected Behavior | Actual Behavior | Console Output / Error |
 |--------------|-------------------|-----------------|------------------------|
-|>* Pressed new |> Reset my tries & |> Does nothing   |
+|> Pressed new|> Reset my tries & |> Does nothing   |
 |game          | make a new round  |                 |
 |              |                   |                 |
 |> Submited    |> hint is supposed |> Gives me wrong |
 |a guess       |to be correct      |hints            |
 |              |                   |                 | 
-|> Pressed     |> No guesses when  |> Allows you to  | 
+|>* Pressed     |> No guesses when  |> Allows you to  | 
 |submit guess  |attempt reaches 0  | guess past 0    |
-|when there's  | 
-|no input      |     
+|when there's  |                   |                 |  
+|no input      |                   |                 |  
+|              |                   |                 | 
+|>* Pressed new |> history is       |> Keeps past     |
+|game          |supposed to reset  |inputs in history|
 ---
 
 ## 2. How did you use AI as a teammate?
