@@ -22,6 +22,10 @@ Document at least 3 bugs you found. Add rows as needed.
 |              |                   |                 |
 |> # of guesses|> # of guesses     |> Wrong # of     |
 |not matching  |matches to the lvl |guess for level  |
+|              |                   |                 | 
+|> Pressed     |> No guesses when  |> Allows you to  | 
+|submit guess  |attempt reaches 0  | guess past 0    |
+|           
 ---
 
 ## 2. How did you use AI as a teammate?
