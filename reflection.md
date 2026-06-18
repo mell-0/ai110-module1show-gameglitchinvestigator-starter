@@ -23,10 +23,17 @@ Document at least 3 bugs you found. Add rows as needed.
 |>* Pressed     |> No guesses when  |> Allows you to  | 
 |submit guess  |attempt reaches 0  | guess past 0    |
 |when there's  |                   |                 |  
-|no input      |                   |                 |  
+|no input\bad  |                   |                 |
+|input         |                   |                 |  
 |              |                   |                 | 
 |>* Pressed new |> history is       |> Keeps past     |
 |game          |supposed to reset  |inputs in history|
+|              |                   |                 |
+|> Attemps not |> Show out of      |> Showing out of |
+|matching up   |attempt message    |attempt message  |
+|              |when you're out of |when you still   |
+|              |attempts           |have 1 left      |
+
 ---
 
 ## 2. How did you use AI as a teammate?
