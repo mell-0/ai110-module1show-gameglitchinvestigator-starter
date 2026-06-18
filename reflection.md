@@ -14,18 +14,16 @@ Document at least 3 bugs you found. Add rows as needed.
 
 |     Input    | Expected Behavior | Actual Behavior | Console Output / Error |
 |--------------|-------------------|-----------------|------------------------|
-|> Pressed new |> Reset my tries & |> Does nothing   |
+|>* Pressed new |> Reset my tries & |> Does nothing   |
 |game          | make a new round  |                 |
 |              |                   |                 |
 |> Submited    |> hint is supposed |> Gives me wrong |
 |a guess       |to be correct      |hints            |
-|              |                   |                 |
-|> # of guesses|> # of guesses     |> Wrong # of     |
-|not matching  |matches to the lvl |guess for level  |
 |              |                   |                 | 
 |> Pressed     |> No guesses when  |> Allows you to  | 
 |submit guess  |attempt reaches 0  | guess past 0    |
-|           
+|when there's  | 
+|no input      |     
 ---
 
 ## 2. How did you use AI as a teammate?
