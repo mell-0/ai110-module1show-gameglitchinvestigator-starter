@@ -32,19 +32,12 @@ def parse_guess(raw: str):
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
-
-    try:
-        if guess > secret:
-            return "Too High", "📉 Go LOWER!" 
-        else:
-            return "Too Low", "📈 Go HIGHER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📉 Go LOWER!"
+    
+    if guess > secret:
+        return "Too High", "📉 Go LOWER!" 
+    else:
         return "Too Low", "📈 Go HIGHER!"
+
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -160,10 +153,9 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        #BUG FIX: Don't need to covert the secret to string for every other guess 
+        secret = st.session_state.secret
+
 
         outcome, message = check_guess(guess_int, secret)
 
