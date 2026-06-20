@@ -14,3 +14,20 @@ def test_guess_too_low():
     # If secret is 50 and guess is 40, hint should be "Too Low"
     result = check_guess(40, 50)
     assert result == "Too Low"
+
+def check_guess(guess, secret):
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+
+    try:
+        if guess > secret:
+            return "Too High", "📈 Go HIGHER!"
+        else:
+            return "Too Low", "📉 Go LOWER!"
+    except TypeError:
+        g = str(guess)
+        if g == secret:
+            return "Win", "🎉 Correct!"
+        if g > secret:
+            return "Too High", "📈 Go HIGHER!"
+        return "Too Low", "📉 Go LOWER!"

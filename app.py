@@ -35,16 +35,16 @@ def check_guess(guess, secret):
 
     try:
         if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
+            return "Too High", "📉 Go LOWER!" 
         else:
-            return "Too Low", "📉 Go LOWER!"
+            return "Too Low", "📈 Go HIGHER!"
     except TypeError:
         g = str(guess)
         if g == secret:
             return "Win", "🎉 Correct!"
         if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -184,6 +184,8 @@ if submit:
                 f"Final score: {st.session_state.score}"
             )
 
+    # The attempt-limit check now sits after the entire if not ok / else block, so it fires 
+    # regardless of whether the input was valid or not. The st.session_state.status == "playing" guard ensures it doesn't double-fire after a win. 
     if st.session_state.status == "playing" and st.session_state.attempts >= attempt_limit:
         st.session_state.status = "lost"
         st.error(

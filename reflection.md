@@ -10,23 +10,23 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 **Bug Reproduction Log**
 
-Document at least 3 bugs you found. Add rows as needed.
+Document at least 3 bugs you found. Add rows as needed. * = working, @ = done
 
 |     Input    | Expected Behavior | Actual Behavior | Console Output / Error |
 |--------------|-------------------|-----------------|------------------------|
-|> Pressed new|> Reset my tries & |> Does nothing   |
+|>@ Pressed new|> Reset my tries & |> Does nothing   |
 |game          | make a new round  |                 |
 |              |                   |                 |
-|> Submited    |> hint is supposed |> Gives me wrong |
+|>* Submited    |> hint is supposed |> Gives me wrong |
 |a guess       |to be correct      |hints            |
 |              |                   |                 | 
-|>* Pressed     |> No guesses when  |> Allows you to  | 
+|>@ Pressed     |> No guesses when  |> Allows you to  | 
 |submit guess  |attempt reaches 0  | guess past 0    |
 |when there's  |                   |                 |  
 |no input\bad  |                   |                 |
 |input         |                   |                 |  
 |              |                   |                 | 
-|>* Pressed new |> history is       |> Keeps past     |
+|> Pressed new |> history is       |> Keeps past     |
 |game          |supposed to reset  |inputs in history|
 |              |                   |                 |
 |> Attemps not |> Show out of      |> Showing out of |
