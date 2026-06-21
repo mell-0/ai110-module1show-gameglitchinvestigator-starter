@@ -17,7 +17,7 @@ Document at least 3 bugs you found. Add rows as needed. * = working, @ = done
 |>@ Pressed new|> Reset my tries & |> Does nothing   |
 |game          | make a new round  |                 |
 |              |                   |                 |
-|>* Submited    |> hint is supposed |> Gives me wrong |
+|>@ Submited    |> hint is supposed |> Gives me wrong |
 |a guess       |to be correct      |hints            |
 |              |                   |                 | 
 |>@ Pressed     |> No guesses when  |> Allows you to  | 

@@ -1,5 +1,6 @@
 import random
-import streamlit as st
+import streamlit as st  # Remember to activate the Activate.ps1 in .venv/Scripts before running this 
+from logic_utils import check_guess
 
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
@@ -29,14 +30,14 @@ def parse_guess(raw: str):
     return True, value, None
 
 
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-    
-    if guess > secret:
-        return "Too High", "📉 Go LOWER!" 
-    else:
-        return "Too Low", "📈 Go HIGHER!"
+# def check_guess(guess, secret):
+#     if guess == secret:
+#         return "Win", "🎉 Correct!"
+#
+#     if guess > secret:
+#         return "Too High", "📉 Go LOWER!"
+#     else:
+#         return "Too Low", "📈 Go HIGHER!"
 
 
 
