@@ -75,6 +75,6 @@ Streamlit is a script that re-runs top to bottom every time something happens an
   One habit that I would reuse in future labs is asking ai for one small defined task at a time, similar to git commits. 
   This makes it easier for me to understand the changes.
 - What is one thing you would do differently next time you work with AI on a coding task?
-I could use the different modes better. Planning mode would be helpful if I'm preparing to make bigger changes
+- I could use the different modes better. Planning mode would be helpful if I'm preparing to make bigger changes
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
-I think ai generated code has come along way. It writes code that I would write or even better sometimes. 
+> I think ai generated code has come along way. It writes code that I would write or even better sometimes. 
