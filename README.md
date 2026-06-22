@@ -26,28 +26,30 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+This game is making the user guess within a number range based on the difficulty with limited number of guesses.
 - [ ] Detail which bugs you found.
+I found several bugs. 2 of them are: I pressed new game and nothing happened. Another one was when you make a guess, the hint was incorrect.
 - [ ] Explain what fixes you applied.
+For the new game not working, I reset the status by adding st.session_state.status = "playing" so after rerun the status guard below would immediately call st.stop(), blocking the whole page.
+For the incorrect hint, I fipped the messages with the low and high. 
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 50
+2. Game returns "Too Low"
+3. User enters a guess of 80 → "Too High"
+4. Score updates correctly after each guess
+5. Game ends after the correct guess or when user guesses correctly 
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
+                                                                                                                                                                                                      
+tests\test_game_logic.py ....................... [100%]
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+==================================================================================================== 23 passed in 0.15s =====================================================================================================
 
 ## 🚀 Stretch Features
 
