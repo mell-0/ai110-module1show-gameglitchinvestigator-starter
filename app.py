@@ -1,15 +1,16 @@
 import random
 import streamlit as st  # Remember to activate the Activate.ps1 in .venv/Scripts before running this 
-from logic_utils import check_guess, parse_guess
+from logic_utils import check_guess, parse_guess, get_range_for_difficulty
 
-def get_range_for_difficulty(difficulty: str):
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
-        return 1, 50
-    return 1, 100
+
+# def get_range_for_difficulty(difficulty: str):
+#     if difficulty == "Easy":
+#         return 1, 20
+#     if difficulty == "Normal":
+#         return 1, 100
+#     if difficulty == "Hard":
+#         return 1, 50
+#     return 1, 100
 
 
 # def parse_guess(raw: str):
@@ -127,7 +128,7 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(low, high)
 
     # BUG FIX: status was never reset, so after rerun the status guard below
     # would immediately call st.stop(), blocking the whole page.

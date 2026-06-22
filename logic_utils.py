@@ -1,6 +1,12 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if difficulty == "Easy":
+        return 1, 20
+    if difficulty == "Normal":
+        return 1, 50
+    if difficulty == "Hard":
+        return 1, 100
+    return 1, 50
 
 
 # only accepts whole numbers, and checks if they are in the valid range. 3 & 3.0 are valid, but 3.5 or 0.3 are not.
