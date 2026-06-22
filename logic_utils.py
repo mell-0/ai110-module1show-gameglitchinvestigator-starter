@@ -3,13 +3,31 @@ def get_range_for_difficulty(difficulty: str):
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
 
-def parse_guess(raw: str):
+# only accepts whole numbers, and checks if they are in the valid range. 3 & 3.0 are valid, but 3.5 or 0.3 are not.
+def parse_guess(raw: str, low: int, high: int):
     """
     Parse user input into an int guess.
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if raw == "":
+        return False, None, "Enter a guess."
+
+    try:
+        if "." in raw:
+            as_float = float(raw)
+            if as_float != int(as_float):
+                return False, None, "Please enter a whole number."
+            value = int(as_float)
+        else:
+            value = int(raw)
+    except Exception:
+        return False, None, "That is not a number."
+
+    if value < low or value > high:
+        return False, None, f"Guess must be between {low} and {high}."
+
+    return True, value, None
 
 
 def check_guess(guess, secret):
