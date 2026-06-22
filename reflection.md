@@ -72,9 +72,13 @@ Streamlit is a script that re-runs top to bottom every time something happens an
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
-  One habit that I would reuse in future labs is asking ai for one small defined task at a time, similar to git commits. 
+  Answer: One habit that I would reuse in future labs is asking ai for one small defined task at a time, similar to git commits. 
   This makes it easier for me to understand the changes.
+  
 - What is one thing you would do differently next time you work with AI on a coding task?
-- I could use the different modes better. Planning mode would be helpful if I'm preparing to make bigger changes
+
+Answer: I could use the different modes better. Planning mode would be helpful if I'm preparing to make bigger changes
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
-> I think ai generated code has come along way. It writes code that I would write or even better sometimes. 
+
+Answer: I think ai generated code has come along way. It writes code that I would write or even better sometimes. 
