@@ -1,4 +1,4 @@
-from logic_utils import check_guess, parse_guess, get_range_for_difficulty
+from logic_utils import check_guess, parse_guess, get_range_for_difficulty, update_score
 
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win
@@ -96,3 +96,31 @@ def test_range_unknown_defaults():
     low, high = get_range_for_difficulty("Unknown")
     assert low == 1
     assert high == 50
+
+
+# --- update_score tests ---
+
+def test_update_score_win_attempt_1():
+    # attempt 1: 100 - 10*1 = 90 points
+    assert update_score(0, "Win", 1) == 90
+
+def test_update_score_win_attempt_5():
+    # attempt 5: 100 - 10*5 = 50 points
+    assert update_score(0, "Win", 5) == 50
+
+def test_update_score_win_floor():
+    # attempt 10: 100 - 100 = 0, but minimum is 10
+    assert update_score(0, "Win", 10) == 10
+
+def test_update_score_win_below_floor():
+    # attempt 15: would be -50, still clamped to 10
+    assert update_score(0, "Win", 15) == 10
+
+def test_update_score_too_high():
+    assert update_score(100, "Too High", 1) == 95
+
+def test_update_score_too_low():
+    assert update_score(100, "Too Low", 1) == 95
+
+def test_update_score_unknown_outcome():
+    assert update_score(100, "Unknown", 1) == 100
