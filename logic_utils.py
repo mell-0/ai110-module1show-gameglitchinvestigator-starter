@@ -3,6 +3,7 @@ def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
+        # BUG FIX: Normal difficulty should be 1-50, not 1-100.
         return 1, 50
     if difficulty == "Hard":
         return 1, 100
@@ -53,4 +54,17 @@ def check_guess(guess, secret):
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if outcome == "Win":
+        # the more attempts, the fewer points you get, but you always get at least 10 points for a win.
+        points = 100 - 10 * attempt_number
+        if points < 10:
+            points = 10
+        return current_score + points
+
+    if outcome == "Too High":
+        return current_score - 5
+
+    if outcome == "Too Low":
+        return current_score - 5
+
+    return current_score

@@ -1,6 +1,6 @@
 import random
 import streamlit as st  # Remember to activate the Activate.ps1 in .venv/Scripts before running this 
-from logic_utils import check_guess, parse_guess, get_range_for_difficulty
+from logic_utils import check_guess, parse_guess, get_range_for_difficulty, update_score
 
 
 # def get_range_for_difficulty(difficulty: str):
@@ -42,22 +42,22 @@ from logic_utils import check_guess, parse_guess, get_range_for_difficulty
 
 
 
-def update_score(current_score: int, outcome: str, attempt_number: int):
-    if outcome == "Win":
-        points = 100 - 10 * (attempt_number + 1)
-        if points < 10:
-            points = 10
-        return current_score + points
+# def update_score(current_score: int, outcome: str, attempt_number: int):
+#     if outcome == "Win":
+#         points = 100 - 10 * (attempt_number + 1)
+#         if points < 10:
+#             points = 10
+#         return current_score + points
 
-    if outcome == "Too High":
-        if attempt_number % 2 == 0:
-            return current_score + 5
-        return current_score - 5
+#     if outcome == "Too High":
+#         if attempt_number % 2 == 0:
+#             return current_score + 5
+#         return current_score - 5
 
-    if outcome == "Too Low":
-        return current_score - 5
+#     if outcome == "Too Low":
+#         return current_score - 5
 
-    return current_score
+#     return current_score
 
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
@@ -128,6 +128,8 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
+    # BUG FIX: using low and high from the current difficulty settings, instead of hardcoding 1 and 100. 
+    # This ensures the new secret is always within the correct range for the selected difficulty.
     st.session_state.secret = random.randint(low, high)
 
     # BUG FIX: status was never reset, so after rerun the status guard below
